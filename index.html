@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>洛克王国攻略站 | 全攻略版</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:'Segoe UI','微软雅黑',sans-serif;
+    background:#fff7e8;
+    color:#3a2512;
+}
+
+/* ===== 导航 ===== */
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:rgba(255,247,232,0.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,179,71,0.3);
+}
+
+.nav-inner{
+    max-width:1300px;
+    margin:auto;
+    padding:18px 24px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:16px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:28px;
+    font-weight:900;
+    color:#ff9800;
+}
+
+.logo i{color:#ffc107;}
+
+.nav-links{
+    display:flex;
+    gap:32px;
+    font-weight:600;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#5c391d;
+}
+
+.nav-links a:hover{color:#ff9800;}
+
+.login-btn{
+    background:linear-gradient(135deg,#ffb300,#ff7b00);
+    border:none;
+    color:white;
+    padding:10px 28px;
+    border-radius:999px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* ===== Hero ===== */
+.hero{
+    text-align:center;
+    padding:70px 20px;
+    background:linear-gradient(145deg,#ffefd6,#ffe3c2);
+    border-radius:0 0 60px 60px;
+    margin-bottom:30px;
+}
+
+.hero-badge{
+    background:#ffebc2;
+    display:inline-block;
+    padding:6px 20px;
+    border-radius:60px;
+    font-weight:bold;
+    color:#c96f0e;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:76px;
+    color:#3b220d;
+    text-shadow:3px 3px 0 #ffda9e;
+}
+
+.hero p{
+    font-size:20px;
+    color:#7a582e;
+    margin:20px 0;
+}
+
+/* 搜索 */
+.search-box{
+    max-width:600px;
+    margin:30px auto 0;
+    display:flex;
+    background:white;
+    border-radius:999px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.search-box input{
+    flex:1;
+    border:none;
+    outline:none;
+    padding:16px 22px;
+    font-size:16px;
+}
+
+.search-box button{
+    background:#ffb300;
+    border:none;
+    padding:0 28px;
+    border-radius:999px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* ===== 通用区 ===== */
+.section{
+    max-width:1300px;
+    margin:60px auto;
+    padding:0 24px;
+}
+
+.section-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:32px;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.section-title h2{
+    font-size:38px;
+}
+
+.section-title p{
+    color:#b2782f;
+}
+
+.more{
+    text-decoration:none;
+    color:#ff9800;
+    font-weight:bold;
+}
+
+/* ===== 活动 ===== */
+.events{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:28px;
+}
+
+.event-card{
+    background:linear-gradient(145deg,#fff8ed,#fff0dd);
+    border-radius:32px;
+    padding:28px;
+    border:1px solid #ffe2bc;
+    transition:0.25s;
+}
+
+.event-card:hover{
+    transform:translateY(-8px);
+}
+
+.event-icon{
+    font-size:56px;
+    margin-bottom:16px;
+}
+
+.event-card h3{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.event-card p{
+    color:#75583c;
+    margin-bottom:16px;
+}
+
+.event-btn{
+    display:inline-block;
+    background:#ffb300;
+    padding:10px 22px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* ===== 宠物（重点：恢复你喜欢的视觉） ===== */
+.pets-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:28px;
+}
+
+.pet-card{
+    background:white;
+    border-radius:32px;
+    padding:26px 16px;
+    text-align:center;
+    box-shadow:0 6px 14px rgba(0,0,0,0.04);
+    transition:0.25s;
+}
+
+.pet-card:hover{
+    transform:translateY(-6px);
+}
+
+a.pet-card{
+    text-decoration:none;
+    color:inherit;
+    display:block;
+    cursor:pointer;
+}
+
+.pet-emoji{
+    font-size:96px;
+    margin-bottom:10px;
+}
+
+.pet-card h3{
+    font-size:24px;
+    margin-bottom:6px;
+}
+
+.pet-type{
+    background:#fdebcd;
+    padding:6px 18px;
+    border-radius:60px;
+    display:inline-block;
+    font-weight:bold;
+    color:#d98300;
+}
+
+/* ===== 攻略 ===== */
+.guides{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:28px;
+}
+
+.guide-card{
+    background:white;
+    border-radius:32px;
+    padding:32px;
+    box-shadow:0 8px 18px rgba(0,0,0,0.04);
+}
+
+.guide-icon{
+    background:linear-gradient(135deg,#ffcc66,#ff9800);
+    width:70px;
+    height:70px;
+    border-radius:24px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.guide-btn{
+    display:inline-block;
+    background:#ffb300;
+    padding:10px 20px;
+    border-radius:60px;
+    text-decoration:none;
+    font-weight:bold;
+    margin-top:12px;
+}
+
+/* ===== footer ===== */
+.footer{
+    background:linear-gradient(135deg,#ffcc66,#ff9800);
+    text-align:center;
+    padding:50px 20px;
+    color:white;
+    margin-top:70px;
+}
+
+.footer-icons{
+    display:flex;
+    justify-content:center;
+    gap:28px;
+    font-size:28px;
+    margin-top:20px;
+}
+
+/* ===== mobile ===== */
+@media(max-width:700px){
+    .hero h1{font-size:48px;}
+    .nav-links{display:none;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="navbar">
+<div class="nav-inner">
+    <div class="logo"><i class="fas fa-dragon"></i>洛克王国攻略站</div>
+
+    <div class="nav-links">
+        <a href="#">首页</a>
+        <a href="#">宠物图鉴</a>
+        <a href="#">活动攻略</a>
+        <a href="#">天梯阵容</a>
+        <a href="#">新手专区</a>
+    </div>
+
+    <button class="login-btn">登录</button>
+</div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<div class="hero">
+<div class="hero-badge">🏆 圣龙觉醒版本</div>
+
+<h1>洛克王国<br>全攻略站</h1>
+
+<p>🔥 最新活动 · 全宠图鉴 · 新手回归 · 天梯阵容</p>
+
+<div class="search-box">
+<input placeholder="搜索宠物、活动、攻略...">
+<button>搜索</button>
+</div>
+</div>
+
+<!-- ===== 活动 ===== -->
+<section class="section">
+<div class="section-title">
+<div>
+<h2>热门活动</h2>
+<p>HOT EVENTS</p>
+</div>
+<a class="more" href="#">查看更多 →</a>
+</div>
+
+<div class="events">
+
+<div class="event-card">
+<div class="event-icon">🐉✨</div>
+<h3>圣龙骑士觉醒</h3>
+<p>挑战Boss获得限定宠物。</p>
+<a class="event-btn" href="#">查看攻略</a>
+</div>
+
+<div class="event-card">
+<div class="event-icon">📖⚡</div>
+<h3>魔法学院试炼</h3>
+<p>每日副本奖励。</p>
+<a class="event-btn" href="#">查看攻略</a>
+</div>
+
+<div class="event-card">
+<div class="event-icon">🏆⚔️</div>
+<h3>宠物竞技联赛</h3>
+<p>天梯阵容推荐。</p>
+<a class="event-btn" href="#">查看攻略</a>
+</div>
+
+<div class="event-card">
+<div class="event-icon">🌲🔍</div>
+<h3>森林秘境探险</h3>
+<p>隐藏宠物获取。</p>
+<a class="event-btn" href="#">查看攻略</a>
+</div>
+
+</div>
+</section>
+
+<!-- ===== 宠物（已恢复你喜欢的效果） ===== -->
+<section class="section">
+<div class="section-title">
+<div>
+<h2>热门宠物</h2>
+<p>POPULAR PETS</p>
+</div>
+</div>
+
+<div class="pets-grid">
+
+<a href="pages/fire-dragon.html" class="pet-card">
+<div class="pet-emoji">🐉🔥</div>
+<h3>火花龙</h3>
+<div class="pet-type">火系</div>
+</a>
+
+<div class="pet-card">
+<div class="pet-emoji">💧💦</div>
+<h3>水蓝蓝</h3>
+<div class="pet-type">水系</div>
+</div>
+
+<div class="pet-card">
+<div class="pet-emoji">🐱🍃</div>
+<h3>喵喵</h3>
+<div class="pet-type">草系</div>
+</div>
+
+<div class="pet-card">
+<div class="pet-emoji">⚡🦊</div>
+<h3>酷拉</h3>
+<div class="pet-type">电系</div>
+</div>
+
+</div>
+</section>
+
+<!-- ===== 攻略 ===== -->
+<section class="section">
+<div class="section-title">
+<div>
+<h2>最新攻略</h2>
+<p>LATEST GUIDES</p>
+</div>
+</div>
+
+<div class="guides">
+
+<div class="guide-card">
+<div class="guide-icon">🐉</div>
+<h3>圣龙骑士打法</h3>
+<p>低配置通关。</p>
+<a class="guide-btn" href="dragon.html">查看攻略</a>
+</div>
+
+<div class="guide-card">
+<div class="guide-icon">🔥</div>
+<h3>火花龙培养</h3>
+<p>技能推荐。</p>
+<a class="guide-btn" href="#">查看攻略</a>
+</div>
+
+<div class="guide-card">
+<div class="guide-icon">🏆</div>
+<h3>天梯阵容</h3>
+<p>版本最强PVP。</p>
+<a class="guide-btn" href="#">查看攻略</a>
+</div>
+
+</div>
+</section>
+
+<!-- ===== footer ===== -->
+<footer class="footer">
+<h2>洛克王国攻略站</h2>
+<p>攻略 · 图鉴 · PVP · 新手</p>
+
+<div class="footer-icons">
+<i class="fab fa-weixin"></i>
+<i class="fab fa-bilibili"></i>
+<i class="fab fa-discord"></i>
+</div>
+
+<p>✨ 非官方玩家站点 ✨</p>
+</footer>
+
+</body>
+</html>
