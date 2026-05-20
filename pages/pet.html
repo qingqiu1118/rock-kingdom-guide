@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宠物详情</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Microsoft YaHei", sans-serif;
+  background: #fff7e8;
+  color: #3b220d;
+  line-height: 1.8;
+}
+
+.header {
+  padding: 48px 24px;
+  text-align: center;
+  background: linear-gradient(135deg, #ff6b35, #ffb300);
+  color: white;
+}
+
+.header h1 {
+  font-size: 48px;
+  text-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.header .type-tag {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 20px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 24px 60px;
+}
+
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.pet-image {
+  text-align: center;
+  font-size: 120px;
+  line-height: 1.2;
+  padding: 24px;
+  background: #fff3d8;
+  border-radius: 24px;
+  margin-bottom: 36px;
+}
+
+.pet-image img {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.section h2 {
+  font-size: 28px;
+  color: #ff9800;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #ffe2bc;
+}
+
+.section p,
+.section ul {
+  font-size: 18px;
+  color: #5b3d21;
+}
+
+.section ul {
+  padding-left: 24px;
+}
+
+.section li {
+  margin-bottom: 8px;
+}
+
+.tip {
+  background: #fff3d8;
+  border-left: 6px solid #ffb300;
+  padding: 20px 24px;
+  border-radius: 16px;
+}
+
+.error-box {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.error-box p {
+  font-size: 18px;
+  color: #75583c;
+  margin-bottom: 20px;
+}
+
+.error-box code {
+  background: #fdebcd;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #ffb300, #ff8a00);
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.hidden { display: none; }
+
+@media (max-width: 700px) {
+  .header h1 { font-size: 36px; }
+  .card { padding: 28px; }
+  .pet-image { font-size: 80px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <h1 id="pet-name">加载中…</h1>
+  <span class="type-tag" id="pet-type"></span>
+</header>
+
+<div class="container">
+  <div class="card" id="pet-content">
+    <div class="pet-image" id="pet-image"></div>
+
+    <section class="section">
+      <h2>性格推荐</h2>
+      <p id="pet-nature"></p>
+    </section>
+
+    <section class="section">
+      <h2>技能配招</h2>
+      <ul id="pet-skills"></ul>
+    </section>
+
+    <section class="section">
+      <h2>获取方式</h2>
+      <p id="pet-obtain"></p>
+    </section>
+
+    <section class="section tip" id="pet-tip-wrap">
+      <p id="pet-tip"></p>
+    </section>
+
+    <a href="../index.html" class="back-btn">返回首页</a>
+  </div>
+
+  <div class="card error-box hidden" id="pet-error">
+    <p>未找到该宠物，请检查 URL 中的 <code>?id=</code> 参数。</p>
+    <p>可用测试 ID：<code>fire-dragon</code>、<code>dimo</code></p>
+    <a href="pet.html?id=fire-dragon" class="back-btn">查看火花龙</a>
+    <a href="../index.html" class="back-btn" style="margin-left:12px;">返回首页</a>
+  </div>
+</div>
+
+<script>
+var pets = {
+  "fire-dragon": {
+    name: "火花龙",
+    type: "火系",
+    emoji: "🐉🔥",
+    image: "",
+    nature: "推荐性格：固执（+攻击 -特攻）或 胆小（+速度 -攻击）。推图优先特攻向可选 保守（+特攻 -攻击）。",
+    skills: [
+      "火花 — 稳定起手，PP 充足",
+      "烈焰冲击 — 主力输出技能",
+      "龙之波动 — 补打击面",
+      "保护 — 关键时刻保命"
+    ],
+    obtain: "创建角色时可选择为初始宠物；亦可在火系地图捕捉小火龙后进化获得。",
+    tip: "培养建议：优先提升特攻与速度，适合作为队伍主力输出。"
+  },
+  "dimo": {
+    name: "迪莫",
+    type: "光系",
+    emoji: "✨🐱",
+    image: "",
+    nature: "推荐性格：开朗（+速度 -特攻）或 勇敢（+攻击 -速度）。偏辅助向可选 慎重（+特防 -攻击）。",
+    skills: [
+      "光之护盾 — 提升队伍容错",
+      "闪耀冲击 — 稳定光系输出",
+      "治愈之光 — 回复生命",
+      "力量增强 — 为队友叠加增益"
+    ],
+    obtain: "完成新手主线任务后赠送；部分版本活动或商城限时获取。",
+    tip: "培养建议：前期可当万金油过渡，中后期可转辅助或高速干扰位。"
+  }
+};
+
+function getPetId() {
+  var params = new URLSearchParams(window.location.search);
+  return params.get("id") || "";
+}
+
+function renderImage(pet) {
+  var box = document.getElementById("pet-image");
+  if (pet.image) {
+    box.innerHTML = '<img src="' + pet.image + '" alt="' + pet.name + '">';
+  } else {
+    box.textContent = pet.emoji;
+  }
+}
+
+function renderSkills(skills) {
+  var list = document.getElementById("pet-skills");
+  list.innerHTML = "";
+  for (var i = 0; i < skills.length; i++) {
+    var li = document.createElement("li");
+    li.textContent = skills[i];
+    list.appendChild(li);
+  }
+}
+
+function showPet(pet) {
+  document.title = pet.name + " · 宠物详情";
+  document.getElementById("pet-name").textContent = pet.name;
+  document.getElementById("pet-type").textContent = pet.type;
+  renderImage(pet);
+  document.getElementById("pet-nature").textContent = pet.nature;
+  renderSkills(pet.skills);
+  document.getElementById("pet-obtain").textContent = pet.obtain;
+  document.getElementById("pet-tip").textContent = pet.tip;
+  document.getElementById("pet-content").classList.remove("hidden");
+  document.getElementById("pet-error").classList.add("hidden");
+}
+
+function showError() {
+  document.title = "宠物未找到";
+  document.getElementById("pet-name").textContent = "宠物未找到";
+  document.getElementById("pet-type").textContent = "";
+  document.getElementById("pet-content").classList.add("hidden");
+  document.getElementById("pet-error").classList.remove("hidden");
+}
+
+var id = getPetId();
+var pet = pets[id];
+
+if (pet) {
+  showPet(pet);
+} else {
+  showError();
+}
+</script>
+
+</body>
+</html>

@@ -209,6 +209,12 @@ body{
     gap:28px;
 }
 
+.pets-grid > a{
+    display:block;
+    text-decoration:none;
+    color:inherit;
+}
+
 .pet-card{
     background:white;
     border-radius:32px;
@@ -218,7 +224,7 @@ body{
     transition:0.25s;
 }
 
-.pet-card:hover{
+.pets-grid > a:hover .pet-card{
     transform:translateY(-6px);
 }
 
@@ -390,17 +396,21 @@ body{
 
 <div class="pets-grid">
 
+<a href="pages/pet.html?id=fire-dragon">
 <div class="pet-card">
 <div class="pet-emoji">🐉🔥</div>
 <h3>火花龙</h3>
 <div class="pet-type">火系</div>
 </div>
+</a>
 
+<a href="pages/pet.html?id=dimo">
 <div class="pet-card">
-<div class="pet-emoji">💧💦</div>
-<h3>水蓝蓝</h3>
-<div class="pet-type">水系</div>
+<div class="pet-emoji">✨🐱</div>
+<h3>迪莫</h3>
+<div class="pet-type">光系</div>
 </div>
+</a>
 
 <div class="pet-card">
 <div class="pet-emoji">🐱🍃</div>
