@@ -365,12 +365,172 @@ body{
     margin-top:20px;
 }
 
-/* ===== mobile ===== */
-@media(max-width:700px){
-    .hero h1{font-size:48px;}
-    .nav-links{display:none;}
-    .pet-card h3{font-size:13px;line-height:1.4;padding:0 4px;}
-    .seo-keywords-tags a{font-size:13px;padding:7px 12px;}
+/* ===== mobile（仅 ≤768px，不影响桌面端） ===== */
+@media (max-width: 768px) {
+    html,
+    body {
+        overflow-x: hidden;
+        font-size: 16px;
+    }
+
+    .nav-inner {
+        padding: 14px 16px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .login-btn {
+        min-height: 44px;
+        font-size: 16px;
+    }
+
+    .hero {
+        padding: 48px 16px;
+        border-radius: 0 0 40px 40px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .search-box {
+        margin-top: 24px;
+    }
+
+    .search-box input {
+        font-size: 16px;
+        min-height: 44px;
+    }
+
+    .search-box button {
+        min-height: 44px;
+        font-size: 16px;
+        padding: 0 22px;
+    }
+
+    .seo-keywords {
+        margin: 0 auto 32px;
+        padding: 0 16px;
+    }
+
+    .seo-keywords-title {
+        font-size: 16px;
+    }
+
+    .seo-keywords-tags {
+        gap: 12px;
+    }
+
+    .seo-keywords-tags a {
+        font-size: 16px;
+        padding: 10px 16px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .section {
+        margin: 44px auto;
+        padding: 0 16px;
+    }
+
+    .section-title {
+        margin-bottom: 24px;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .section-title p {
+        font-size: 16px;
+    }
+
+    .more {
+        font-size: 16px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .events,
+    .pets-grid,
+    .guides {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .event-card,
+    .pet-card,
+    .guide-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .pets-grid > a {
+        width: 100%;
+    }
+
+    .event-card {
+        padding: 24px 20px;
+    }
+
+    .event-card h3 {
+        font-size: 20px;
+    }
+
+    .event-card p {
+        font-size: 16px;
+    }
+
+    .event-btn,
+    .guide-btn {
+        min-height: 44px;
+        font-size: 16px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 22px;
+    }
+
+    .pet-card {
+        padding: 28px 16px;
+    }
+
+    .pet-card h3 {
+        font-size: 16px;
+        line-height: 1.5;
+        padding: 0 8px;
+    }
+
+    .pet-type {
+        font-size: 16px;
+    }
+
+    .guide-card {
+        padding: 28px 24px;
+    }
+
+    .guide-card h3,
+    .guide-card p {
+        font-size: 16px;
+    }
+
+    .footer {
+        padding: 40px 16px;
+        font-size: 16px;
+    }
 }
 </style>
 </head>
