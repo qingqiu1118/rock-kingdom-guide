@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>洛克王国世界PVP强度榜｜当前版本天梯宠物推荐</title>
+<meta name="description" content="洛克王国世界PVP强度排行榜，包含T0/T1宠物推荐、平民阵容、新手PVP思路与当前版本培养建议。">
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Microsoft YaHei", sans-serif;
+  background: #fff7e8;
+  color: #3b220d;
+  line-height: 1.8;
+}
+
+.header {
+  padding: 48px 24px;
+  text-align: center;
+  background: linear-gradient(135deg, #ff6b35, #ffb300);
+  color: white;
+}
+
+.header .badge {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 6px 18px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.header h1 {
+  font-size: 40px;
+  text-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.header .subtitle {
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 24px 60px;
+}
+
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.hero-banner {
+  text-align: center;
+  font-size: 72px;
+  padding: 20px;
+  background: linear-gradient(145deg, #fff8ed, #fff0dd);
+  border-radius: 24px;
+  border: 1px solid #ffe2bc;
+  margin-bottom: 36px;
+}
+
+.section {
+  margin-bottom: 36px;
+}
+
+.section:last-of-type {
+  margin-bottom: 0;
+}
+
+.section h2 {
+  font-size: 28px;
+  color: #ff9800;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #ffe2bc;
+}
+
+.section p,
+.section ul {
+  font-size: 18px;
+  color: #5b3d21;
+}
+
+.section ul {
+  padding-left: 24px;
+}
+
+.section li {
+  margin-bottom: 10px;
+}
+
+.section strong {
+  color: #c96f0e;
+}
+
+.sub-card {
+  background: #fffaf0;
+  border: 1px solid #ffe2bc;
+  border-radius: 20px;
+  padding: 20px 24px;
+  margin-top: 16px;
+}
+
+.sub-card h3 {
+  font-size: 20px;
+  color: #ff9800;
+  margin-bottom: 10px;
+}
+
+.tip {
+  background: #fff3d8;
+  border-left: 6px solid #ffb300;
+  padding: 20px 24px;
+  border-radius: 16px;
+  margin-top: 16px;
+}
+
+.tier-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 14px;
+  margin-right: 8px;
+}
+
+.tier-t0 {
+  background: linear-gradient(135deg, #ff6b6b, #ff4757);
+  color: white;
+}
+
+.tier-t1 {
+  background: linear-gradient(135deg, #ffa502, #ff7f50);
+  color: white;
+}
+
+.tier-t2 {
+  background: linear-gradient(135deg, #7bed9f, #2ed573);
+  color: white;
+}
+
+.guide-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.guide-links a {
+  display: inline-block;
+  padding: 12px 22px;
+  background: linear-gradient(135deg, #fff8ed, #fff0dd);
+  border: 1px solid #ffe2bc;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #5c391d;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.guide-links a:hover {
+  background: linear-gradient(135deg, #ffb300, #ff8a00);
+  color: white;
+  border-color: #ffb300;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #ffb300, #ff8a00);
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  .header h1 { font-size: 28px; }
+  .header .subtitle { font-size: 14px; }
+  .card { padding: 28px; }
+  .hero-banner { font-size: 56px; }
+  .section h2 { font-size: 24px; }
+  .guide-links a { font-size: 14px; padding: 10px 16px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <span class="badge">🏆 天梯攻略站</span>
+  <h1>洛克王国：世界 PVP强度榜</h1>
+  <p class="subtitle">当前版本环境｜T0/T1推荐｜平民阵容｜培养建议</p>
+</header>
+
+<div class="container">
+  <div class="card">
+
+    <div class="hero-banner">⚔️🏆</div>
+
+    <section class="section">
+      <h2>① 当前版本PVP环境</h2>
+      <div class="sub-card">
+        <h3>版本特点</h3>
+        <ul>
+          <li><strong>速度为王</strong>：高速宠物在PVP中占据优势，先手控制往往决定胜负。</li>
+          <li><strong>属性克制明显</strong>：合理利用属性克制可以大幅提升胜率。</li>
+          <li><strong>阵容搭配重要</strong>：单只宠物再强也难以应对多样化阵容，需要合理搭配。</li>
+          <li><strong>平民可玩</strong>：不氪金也能通过合理搭配和操作获得不错胜率。</li>
+        </ul>
+      </div>
+      <div class="tip">
+        当前版本环境相对平衡，没有过于超模的宠物，平民玩家通过合理培养和阵容搭配也能在天梯中取得不错成绩。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>② T0宠物推荐</h2>
+      <div class="sub-card">
+        <h3>版本顶级宠物</h3>
+        <ul>
+          <li><span class="tier-tag tier-t0">T0</span><strong>酷拉</strong>：电系高速干扰型，麻痹控制能力强，速度优势明显。</li>
+          <li><span class="tier-tag tier-t0">T0</span><strong>音速犬</strong>：火系高爆发速攻，收割能力强，适合后手收割。</li>
+          <li><span class="tier-tag tier-t0">T0</span><strong>火花龙</strong>：火系稳定输出，推图和PVP都能用，培养价值高。</li>
+        </ul>
+      </div>
+      <div class="sub-card">
+        <h3>T0宠物特点</h3>
+        <p>
+          T0宠物在当前版本中表现突出，要么有明显的速度优势，要么有强大的控制或爆发能力。
+          建议优先培养这些宠物，可以显著提升PVP胜率。
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>③ T1宠物推荐</h2>
+      <div class="sub-card">
+        <h3>版本强势宠物</h3>
+        <ul>
+          <li><span class="tier-tag tier-t1">T1</span><strong>水蓝蓝</strong>：水系均衡生存，容错高，适合当队伍核心。</li>
+          <li><span class="tier-tag tier-t1">T1</span><strong>迪莫</strong>：光系万金油辅助，护盾与回复能显著提升队伍容错。</li>
+          <li><span class="tier-tag tier-t1">T1</span><strong>喵喵</strong>：草系对策宠物，针对水系阵容有不错表现。</li>
+        </ul>
+      </div>
+      <div class="sub-card">
+        <h3>T1宠物定位</h3>
+        <p>
+          T1宠物虽然不如T0宠物突出，但在特定阵容和环境下表现优秀。
+          适合作为T0宠物的补充，或者根据对手阵容灵活选择。
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>④ T2宠物推荐</h2>
+      <div class="sub-card">
+        <h3>可用宠物</h3>
+        <ul>
+          <li><span class="tier-tag tier-t2">T2</span><strong>其他系别宠物</strong>：根据阵容需要补充，如冰系、岩石系等对策宠物。</li>
+          <li><span class="tier-tag tier-t2">T2</span><strong>过渡宠物</strong>：前期过渡使用，中后期可替换。</li>
+        </ul>
+      </div>
+      <div class="sub-card">
+        <h3>T2宠物使用建议</h3>
+        <p>
+          T2宠物主要用于补充阵容短板或针对特定属性。
+          在资源有限的情况下，优先培养T0和T1宠物，T2宠物根据实际需求选择。
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>⑤ 平民PVP推荐</h2>
+      <div class="sub-card">
+        <h3>平民阵容推荐</h3>
+        <ul>
+          <li><strong>核心输出</strong>：火花龙（火系稳定输出）。</li>
+          <li><strong>生存续航</strong>：水蓝蓝（水系均衡生存）。</li>
+          <li><strong>辅助控制</strong>：迪莫（光系辅助）或酷拉（电系干扰）。</li>
+        </ul>
+      </div>
+      <div class="sub-card">
+        <h3>平民PVP思路</h3>
+        <p>
+          平民玩家资源有限，建议集中培养1-2只核心宠物，其他宠物作为补充。
+          利用属性克制和合理操作，可以在天梯中取得不错成绩。
+        </p>
+      </div>
+      <div class="tip">
+          平民PVP的核心是"精"而不是"多"：两只练到极致的宠物比六只半成品宠物更有竞争力。
+        </div>
+    </section>
+
+    <section class="section">
+      <h2>⑥ 新手PVP推荐</h2>
+      <div class="sub-card">
+        <h3>新手入门阵容</h3>
+        <ul>
+          <li><strong>第一选择</strong>：火花龙（主线赠送，培养成本低）。</li>
+          <li><strong>第二选择</strong>：水蓝蓝（容易获取，生存能力强）。</li>
+          <li><strong>第三选择</strong>：迪莫（主线赠送，辅助能力强）。</li>
+        </ul>
+      </div>
+      <div class="sub-card">
+        <h3>新手PVP建议</h3>
+        <p>
+          新手玩家建议先完成主线任务，提升宠物等级和技能，再参与PVP。
+          前期以熟悉游戏机制和宠物特性为主，不要急于追求高胜率。
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>⑦ 当前强势阵容</h2>
+      <div class="sub-card">
+        <h3>主流阵容搭配</h3>
+        <ul>
+          <li><strong>高速干扰流</strong>：酷拉（控制）+ 迪莫（辅助）+ 音速犬（收割）。</li>
+          <li><strong>均衡输出流</strong>：火花龙（输出）+ 水蓝蓝（生存）+ 迪莫（辅助）。</li>
+          <li><strong>爆发收割流</strong>：音速犬（爆发）+ 火花龙（输出）+ 酷拉（控制）。</li>
+        </ul>
+      </div>
+      <div class="sub-card">
+        <h3>阵容搭配原则</h3>
+        <p>
+          强势阵容通常包含输出、生存、控制三种要素。
+          根据自己的宠物池和对手阵容灵活调整，不要死板套用固定阵容。
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>⑧ PVP常见思路</h2>
+      <ul>
+        <li><strong>先手控制</strong>：利用高速宠物先手控制，打乱对手节奏。</li>
+        <li><strong>属性克制</strong>：根据对手阵容选择克制属性，提升胜率。</li>
+        <li><strong>合理换宠</strong>：根据战况灵活换宠，不要硬刚劣势对位。</li>
+        <li><strong>资源管理</strong>：合理分配技能PP和宠物血量，避免后期无技能可用。</li>
+        <li><strong>观察对手</strong>：观察对手的宠物选择和技能使用，预判对手策略。</li>
+        <li><strong>心态稳定</strong>：PVP胜负常有，保持心态稳定，总结经验。</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>⑨ 属性克制说明</h2>
+      <div class="sub-card">
+        <h3>主要克制关系</h3>
+        <ul>
+          <li><strong>火系</strong>：克制草系，被水系克制。</li>
+          <li><strong>水系</strong>：克制火系，被草系克制。</li>
+          <li><strong>草系</strong>：克制水系，被火系克制。</li>
+          <li><strong>电系</strong>：克制水系，被地面系克制。</li>
+          <li><strong>光系</strong>：克制暗系，被暗系克制。</li>
+        </ul>
+      </div>
+      <div class="tip">
+        合理利用属性克制可以在PVP中获得巨大优势，建议熟悉各属性之间的克制关系。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>⑩ 当前版本培养建议</h2>
+      <ul>
+        <li><strong>优先培养T0宠物</strong>：酷拉、音速犬、火花龙是当前版本优先培养对象。</li>
+        <li><strong>速度属性重要</strong>：PVP中速度优势明显，建议优先提升速度属性。</li>
+        <li><strong>技能搭配合理</strong>：根据宠物定位选择技能，输出宠带输出技能，辅助宠带辅助技能。</li>
+        <li><strong>性格选择合适</strong>：输出宠选择攻击/特攻性格，辅助宠选择速度/特防性格。</li>
+        <li><strong>资源集中投入</strong>：集中资源培养1-2只核心宠物，避免资源分散。</li>
+        <li><strong>关注版本更新</strong>：版本更新可能调整宠物强度，及时调整培养计划。</li>
+      </ul>
+      <div class="tip">
+        培养宠物要有长期规划，不要因为短期胜率波动就频繁更换培养目标。
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>⑪ 相关攻略入口</h2>
+      <p>点击下方卡片，查看对应宠物的详细培养攻略：</p>
+      <div class="guide-links">
+        <a href="guide-fire-dragon.html">火花龙培养</a>
+        <a href="guide-dimo.html">迪莫培养</a>
+        <a href="guide-kula.html">酷拉PVP</a>
+        <a href="guide-sonic-hound.html">音速犬培养</a>
+        <a href="guide-water-blue.html">水蓝蓝培养</a>
+        <a href="zero-spending-guide.html">零氪攻略</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>相关推荐</h2>
+      <div class="guide-links">
+        <a href="zero-spending-guide.html">零氪攻略</a>
+        <a href="new-player.html">新手开荒指南</a>
+        <a href="fire-dragon-pvp.html">火花龙PVP攻略</a>
+      </div>
+    </section>
+
+    <a href="../index.html" class="back-btn">返回首页</a>
+
+  </div>
+</div>
+
+</body>
+</html>
