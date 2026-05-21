@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>洛克王国攻略站 | 全攻略版</title>
+<meta name="description" content="洛克王国攻略站，提供火花龙、迪莫、酷拉等热门宠物培养攻略、性格推荐、技能配招与PVP打法，新手入门必备图鉴站。">
+<meta name="keywords" content="洛克王国, 洛克王国攻略, 火花龙, 迪莫, 酷拉, 宠物培养, 宠物图鉴, 洛克王国新手攻略">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -129,6 +131,52 @@ body{
     cursor:pointer;
 }
 
+/* ===== 热门搜索（SEO） ===== */
+.seo-keywords{
+    max-width:900px;
+    margin:-10px auto 40px;
+    padding:0 24px;
+}
+
+.seo-keywords-inner{
+    background:white;
+    border-radius:24px;
+    padding:20px 24px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.05);
+    border:1px solid #ffe2bc;
+}
+
+.seo-keywords-title{
+    font-size:15px;
+    font-weight:bold;
+    color:#b2782f;
+    margin-bottom:14px;
+}
+
+.seo-keywords-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.seo-keywords-tags a{
+    display:inline-block;
+    padding:8px 16px;
+    background:#fff8ed;
+    border:1px solid #ffe2bc;
+    border-radius:999px;
+    font-size:14px;
+    color:#5c391d;
+    text-decoration:none;
+    transition:0.2s;
+}
+
+.seo-keywords-tags a:hover{
+    background:#ffb300;
+    color:white;
+    border-color:#ffb300;
+}
+
 /* ===== 通用区 ===== */
 .section{
     max-width:1300px;
@@ -205,7 +253,7 @@ body{
 /* ===== 宠物（重点：恢复你喜欢的视觉） ===== */
 .pets-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:28px;
 }
 
@@ -234,8 +282,11 @@ body{
 }
 
 .pet-card h3{
-    font-size:24px;
-    margin-bottom:6px;
+    font-size:15px;
+    line-height:1.45;
+    font-weight:700;
+    margin-bottom:8px;
+    padding:0 6px;
 }
 
 .pet-type{
@@ -284,6 +335,19 @@ body{
     margin-top:12px;
 }
 
+/* ===== SEO（视觉隐藏，不影响布局） ===== */
+.seo-text{
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    white-space:nowrap;
+    border:0;
+}
+
 /* ===== footer ===== */
 .footer{
     background:linear-gradient(135deg,#ffcc66,#ff9800);
@@ -305,6 +369,8 @@ body{
 @media(max-width:700px){
     .hero h1{font-size:48px;}
     .nav-links{display:none;}
+    .pet-card h3{font-size:13px;line-height:1.4;padding:0 4px;}
+    .seo-keywords-tags a{font-size:13px;padding:7px 12px;}
 }
 </style>
 </head>
@@ -318,7 +384,7 @@ body{
 
     <div class="nav-links">
         <a href="#">首页</a>
-        <a href="#">宠物图鉴</a>
+        <a href="pages/pet-index.html">宠物图鉴</a>
         <a href="#">活动攻略</a>
         <a href="#">天梯阵容</a>
         <a href="#">新手专区</a>
@@ -341,6 +407,20 @@ body{
 <button>搜索</button>
 </div>
 </div>
+
+<section class="seo-keywords">
+<div class="seo-keywords-inner">
+<p class="seo-keywords-title">热门搜索：</p>
+<div class="seo-keywords-tags">
+<a href="pages/guide-fire-dragon.html">洛克王国火花龙怎么培养</a>
+<a href="pages/guide-kula.html">洛克王国酷拉PVP怎么玩</a>
+<a href="pages/guide-dimo.html">洛克王国迪莫值得练吗</a>
+<a href="pages/guide-miaomiao.html">洛克王国新手宠物推荐</a>
+<a href="pages/guide-sonic-hound.html">洛克王国音速犬爆发打法</a>
+<a href="pages/guide-water-blue.html">洛克王国水蓝蓝怎么样</a>
+</div>
+</div>
+</section>
 
 <!-- ===== 活动 ===== -->
 <section class="section">
@@ -385,6 +465,48 @@ body{
 </div>
 </section>
 
+<!-- ===== 核心攻略专区 ===== -->
+<section class="section">
+<div class="section-title">
+<div>
+<h2>核心攻略专区</h2>
+<p>NEW PLAYER / PVP / EVENTS / PET BUILD</p>
+</div>
+</div>
+
+<div class="events">
+
+<div class="event-card">
+<div class="event-icon">🌟</div>
+<h3>新手开荒指南</h3>
+<p>开局宠物、资源规划、每日必做</p>
+<a class="event-btn" href="pages/new-player.html">进入专区</a>
+</div>
+
+<div class="event-card">
+<div class="event-icon">🐉</div>
+<h3>宠物培养攻略</h3>
+<p>性格推荐、技能搭配、培养路线</p>
+<a class="event-btn" href="pages/fire-dragon-nature.html">热门攻略</a>
+</div>
+
+<div class="event-card">
+<div class="event-icon">⚔️</div>
+<h3>天梯PVP专区</h3>
+<p>当前版本强势阵容与对战思路</p>
+<span class="event-btn">即将上线</span>
+</div>
+
+<div class="event-card">
+<div class="event-icon">🎁</div>
+<h3>最新活动攻略</h3>
+<p>限时活动、Boss打法、奖励获取</p>
+<span class="event-btn">即将上线</span>
+</div>
+
+</div>
+</section>
+
 <!-- ===== 宠物（已恢复你喜欢的效果） ===== -->
 <section class="section">
 <div class="section-title">
@@ -396,33 +518,53 @@ body{
 
 <div class="pets-grid">
 
-<a href="pages/pet.html?id=fire-dragon">
+<a href="pages/guide-fire-dragon.html">
 <div class="pet-card">
 <div class="pet-emoji">🐉🔥</div>
-<h3>火花龙</h3>
+<h3>洛克王国火花龙培养攻略｜新手必练火系输出宠物</h3>
 <div class="pet-type">火系</div>
 </div>
 </a>
 
-<a href="pages/pet.html?id=dimo">
+<a href="pages/guide-dimo.html">
 <div class="pet-card">
 <div class="pet-emoji">✨🐱</div>
-<h3>迪莫</h3>
+<h3>洛克王国迪莫培养攻略｜光系万金油宠物推荐</h3>
 <div class="pet-type">光系</div>
 </div>
 </a>
 
+<a href="pages/guide-miaomiao.html">
 <div class="pet-card">
 <div class="pet-emoji">🐱🍃</div>
-<h3>喵喵</h3>
+<h3>洛克王国喵喵攻略｜草系前期最强过渡宠物</h3>
 <div class="pet-type">草系</div>
 </div>
+</a>
 
+<a href="pages/guide-kula.html">
 <div class="pet-card">
 <div class="pet-emoji">⚡🦊</div>
-<h3>酷拉</h3>
+<h3>洛克王国酷拉攻略｜电系PVP干扰型宠物</h3>
 <div class="pet-type">电系</div>
 </div>
+</a>
+
+<a href="pages/guide-sonic-hound.html">
+<div class="pet-card">
+<div class="pet-emoji">🔥🐕</div>
+<h3>洛克王国音速犬攻略｜火系高爆发速攻宠物</h3>
+<div class="pet-type">火系</div>
+</div>
+</a>
+
+<a href="pages/guide-water-blue.html">
+<div class="pet-card">
+<div class="pet-emoji">💧🐟</div>
+<h3>洛克王国水蓝蓝攻略｜水系均衡型新手宠物</h3>
+<div class="pet-type">水系</div>
+</div>
+</a>
 
 </div>
 </section>
@@ -449,7 +591,7 @@ body{
 <div class="guide-icon">🔥</div>
 <h3>火花龙培养</h3>
 <p>技能推荐。</p>
-<a class="guide-btn" href="#">查看攻略</a>
+<a class="guide-btn" href="pages/fire-dragon-nature.html">查看攻略</a>
 </div>
 
 <div class="guide-card">
@@ -461,6 +603,8 @@ body{
 
 </div>
 </section>
+
+<p class="seo-text">洛克王国攻略站提供最新宠物培养攻略，包括火花龙、迪莫、喵喵、酷拉、音速犬、水蓝蓝等热门宠物的性格推荐、技能搭配与PVP打法分析。适合新手玩家快速上手洛克王国。</p>
 
 <!-- ===== footer ===== -->
 <footer class="footer">

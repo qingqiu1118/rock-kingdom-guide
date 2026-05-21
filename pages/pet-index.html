@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>宠物图鉴 · 洛克王国攻略站</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Segoe UI", "微软雅黑", sans-serif;
+  background: #fff7e8;
+  color: #3a2512;
+}
+
+.page-header {
+  text-align: center;
+  padding: 56px 20px 40px;
+  background: linear-gradient(145deg, #ffefd6, #ffe3c2);
+  border-radius: 0 0 60px 60px;
+}
+
+.page-header h1 {
+  font-size: 48px;
+  color: #3b220d;
+  text-shadow: 3px 3px 0 #ffda9e;
+}
+
+.page-header p {
+  margin-top: 12px;
+  font-size: 18px;
+  color: #7a582e;
+}
+
+.section {
+  max-width: 1300px;
+  margin: 40px auto 70px;
+  padding: 0 24px;
+}
+
+.pets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 28px;
+}
+
+.pets-grid > a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.pet-card {
+  background: white;
+  border-radius: 32px;
+  padding: 26px 16px;
+  text-align: center;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+  transition: 0.25s;
+}
+
+.pets-grid > a:hover .pet-card {
+  transform: translateY(-6px);
+}
+
+.pet-emoji {
+  font-size: 96px;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.pet-card h3 {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.pet-type {
+  background: #fdebcd;
+  padding: 6px 18px;
+  border-radius: 60px;
+  display: inline-block;
+  font-weight: bold;
+  color: #d98300;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 40px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #ffb300, #ff8a00);
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  .page-header h1 { font-size: 36px; }
+  .page-header p { font-size: 16px; }
+  .section { padding: 0 16px; }
+  .pets-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .pet-emoji { font-size: 72px; }
+  .pet-card { padding: 20px 12px; border-radius: 24px; }
+  .pet-card h3 { font-size: 20px; }
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <h1>宠物图鉴</h1>
+  <p>点击卡片查看详情</p>
+</header>
+
+<section class="section">
+  <div class="pets-grid" id="pets-grid"></div>
+  <a href="../index.html" class="back-btn">返回首页</a>
+</section>
+
+<script>
+var pets = [
+  { id: "fire-dragon", name: "火花龙", type: "火系", emoji: "🐉🔥" },
+  { id: "dimo", name: "迪莫", type: "光系", emoji: "✨🐱" },
+  { id: "miaomiao", name: "喵喵", type: "草系", emoji: "🍃" },
+  { id: "kula", name: "酷拉", type: "电系", emoji: "⚡" },
+  { id: "water-blue", name: "水蓝蓝", type: "水系", emoji: "💧" },
+  { id: "sonic-hound", name: "音速犬", type: "火系", emoji: "🔥" }
+];
+
+function renderPets() {
+  var grid = document.getElementById("pets-grid");
+
+  for (var i = 0; i < pets.length; i++) {
+    var pet = pets[i];
+    var link = document.createElement("a");
+    link.href = "pet.html?id=" + pet.id;
+
+    link.innerHTML =
+      '<div class="pet-card">' +
+        '<div class="pet-emoji">' + pet.emoji + '</div>' +
+        '<h3>' + pet.name + '</h3>' +
+        '<div class="pet-type">' + pet.type + '</div>' +
+      '</div>';
+
+    grid.appendChild(link);
+  }
+}
+
+renderPets();
+</script>
+
+</body>
+</html>

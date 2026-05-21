@@ -166,6 +166,8 @@ body {
       <p id="pet-tip"></p>
     </section>
 
+    <a href="guide.html" id="guide-btn" class="back-btn hidden">查看完整攻略</a>
+
     <a href="../index.html" class="back-btn">返回首页</a>
   </div>
 
@@ -208,6 +210,66 @@ var pets = {
     ],
     obtain: "完成新手主线任务后赠送；部分版本活动或商城限时获取。",
     tip: "培养建议：前期可当万金油过渡，中后期可转辅助或高速干扰位。"
+  },
+  "miaomiao": {
+    name: "喵喵",
+    type: "草系",
+    emoji: "🍃",
+    image: "",
+    nature: "推荐性格：开朗（+速度 -特攻）或 慎重（+特防 -攻击），偏辅助/速度型。",
+    skills: [
+      "藤鞭 — 稳定草系输出",
+      "光合作用 — 回复生命",
+      "寄生种子 — 持续消耗对手",
+      "防御强化 — 提升生存能力"
+    ],
+    obtain: "创建角色时可选择的新手草系宠物；亦可在草系地图捕捉获得。",
+    tip: "培养建议：适合前期过渡，可兼任回复与干扰。"
+  },
+  "kula": {
+    name: "酷拉",
+    type: "电系",
+    emoji: "⚡",
+    image: "",
+    nature: "推荐性格：胆小（+速度 -攻击）或 固执（+攻击 -特攻），偏速度/攻击型。",
+    skills: [
+      "电击 — 快速起手技能",
+      "十万伏特 — 主力电系输出",
+      "电磁波 — 麻痹干扰对手",
+      "闪避 — 提升容错与拉扯能力"
+    ],
+    obtain: "在电系地图捕捉获得，部分版本活动可限时获取。",
+    tip: "培养建议：PVP 干扰型，擅长控场与压制速度。"
+  },
+  "water-blue": {
+    name: "水蓝蓝",
+    type: "水系",
+    emoji: "💧",
+    image: "",
+    nature: "推荐性格：大胆（+防御 -攻击）或 冷静（+特防 -速度），偏防御/特防型。",
+    skills: [
+      "水枪 — 稳定水系起手",
+      "治愈 — 回复生命",
+      "泡沫光线 — 持续输出",
+      "守护 — 关键时刻减伤"
+    ],
+    obtain: "创建角色时可作为初始宠物选择，或通过活动、任务奖励获取。",
+    tip: "培养建议：偏生存向，适合作为队伍的续航与防守位。"
+  },
+  "sonic-hound": {
+    name: "音速犬",
+    type: "火系",
+    emoji: "🔥",
+    image: "",
+    nature: "推荐性格：开朗（+速度 -特攻）或 固执（+攻击 -特攻），偏速度/攻击型。",
+    skills: [
+      "火焰冲击 — 高爆发火系技能",
+      "加速 — 提升出手优先级",
+      "撕咬 — 补物理打击面",
+      "狂暴 — 残局收割输出"
+    ],
+    obtain: "捕捉音速犬幼体后进化获得，部分版本限时活动可获取。",
+    tip: "培养建议：高爆发输出，适合速攻阵容的核心位。"
   }
 };
 
@@ -261,6 +323,8 @@ var pet = pets[id];
 
 if (pet) {
   showPet(pet);
+  document.getElementById("guide-btn").href = "guide.html?id=" + id;
+  document.getElementById("guide-btn").classList.remove("hidden");
 } else {
   showError();
 }

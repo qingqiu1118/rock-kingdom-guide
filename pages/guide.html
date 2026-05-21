@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>攻略详情</title>
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Microsoft YaHei", sans-serif;
+  background: #fff7e8;
+  color: #3b220d;
+  line-height: 1.8;
+}
+
+.header {
+  padding: 48px 24px;
+  text-align: center;
+  background: linear-gradient(135deg, #ff6b35, #ffb300);
+  color: white;
+}
+
+.header h1 {
+  font-size: 48px;
+  text-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.header .subtitle {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 20px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 24px 60px;
+}
+
+.card {
+  background: white;
+  padding: 40px;
+  border-radius: 32px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.section h2 {
+  font-size: 28px;
+  color: #ff9800;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #ffe2bc;
+}
+
+.section p,
+.section ul {
+  font-size: 18px;
+  color: #5b3d21;
+}
+
+.section ul {
+  padding-left: 24px;
+}
+
+.section li {
+  margin-bottom: 8px;
+}
+
+.tip {
+  background: #fff3d8;
+  border-left: 6px solid #ffb300;
+  padding: 20px 24px;
+  border-radius: 16px;
+}
+
+.error-box {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.error-box p {
+  font-size: 18px;
+  color: #75583c;
+  margin-bottom: 20px;
+}
+
+.error-box code {
+  background: #fdebcd;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #ffb300, #ff8a00);
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: bold;
+}
+
+.hidden { display: none; }
+
+@media (max-width: 700px) {
+  .header h1 { font-size: 36px; }
+  .card { padding: 28px; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <h1 id="guide-title">加载中…</h1>
+  <span class="subtitle" id="guide-subtitle"></span>
+</header>
+
+<div class="container">
+  <div class="card" id="guide-content">
+    <section class="section">
+      <h2>推荐性格</h2>
+      <p id="guide-nature"></p>
+    </section>
+
+    <section class="section">
+      <h2>技能解析</h2>
+      <ul id="guide-skills"></ul>
+    </section>
+
+    <section class="section">
+      <h2>PVP / PVE 用途</h2>
+      <p id="guide-usage"></p>
+    </section>
+
+    <section class="section tip">
+      <h2>培养建议</h2>
+      <p id="guide-tip"></p>
+    </section>
+
+    <a href="../index.html" class="back-btn">返回首页</a>
+  </div>
+
+  <div class="card error-box hidden" id="guide-error">
+    <p>未找到该攻略，请检查 URL 中的 <code>?id=</code> 参数。</p>
+    <p>可用 ID：<code>fire-dragon</code>、<code>dimo</code>、<code>kula</code></p>
+    <a href="guide.html?id=fire-dragon" class="back-btn">查看火花龙攻略</a>
+    <a href="../index.html" class="back-btn" style="margin-left:12px;">返回首页</a>
+  </div>
+</div>
+
+<script>
+var guides = {
+  "fire-dragon": {
+    title: "火花龙攻略",
+    subtitle: "火系 · 推图与爆发",
+    nature: "固执（+攻击 -特攻）适合物攻向；胆小（+速度 -攻击）适合速攻先手。推图优先特攻可选保守（+特攻 -攻击）。",
+    skills: [
+      "火花 — 低消耗起手，适合清小怪与叠层",
+      "烈焰冲击 — 主力输出，火系关卡伤害稳定",
+      "龙之波动 — 扩展打击面，应对非火系抵抗",
+      "保护 — PVP 中拖回合、PVE 中保命换宠"
+    ],
+    usage: "PVE：前期主线与火系副本的主力输出，爆发高、入手早。PVP：中速火力手，配合增益可打压制；惧怕高特防与水系克制，需队友补位。",
+    tip: "优先提升特攻与速度，技能以输出为主。前期可当核心培养，中后期可保留为补刀或针对草系阵容。"
+  },
+  "dimo": {
+    title: "迪莫攻略",
+    subtitle: "光系 · 辅助与过渡",
+    nature: "开朗（+速度 -特攻）适合先手辅助；勇敢（+攻击 -速度）偏物攻实验向。偏团队可选慎重（+特防 -攻击）。",
+    skills: [
+      "光之护盾 — 提升队伍容错，PVP 中保护核心",
+      "闪耀冲击 — 稳定光系伤害，推图够用",
+      "治愈之光 — 续航关键，延长持久战能力",
+      "力量增强 — 为队友叠 buff，强化整体输出"
+    ],
+    usage: "PVE：新手期万金油，能奶能打，适合过渡阵容。PVP：辅助/干扰位，通过护盾与增益抬高队伍上限，自身输出有限。",
+    tip: "不必投入过多资源，前期过渡即可。中后期可转纯辅助或高速干扰，与爆发型主 C 搭配效果更佳。"
+  },
+  "kula": {
+    title: "酷拉攻略",
+    subtitle: "电系 · 速度与干扰",
+    nature: "胆小（+速度 -攻击）首选，保证先手控场；固执（+攻击 -特攻）可走物攻速攻实验路线。",
+    skills: [
+      "电击 — 低 PP 消耗起手，适合试探与磨血",
+      "十万伏特 — 核心输出，电系副本与 PVP 主力技",
+      "电磁波 — 麻痹干扰，压制对手行动节奏",
+      "闪避 — 提升拉扯能力，配合高速打法"
+    ],
+    usage: "PVE：电系地图与部分 Boss 战表现良好，清怪效率高。PVP：典型干扰型，靠麻痹与速度打乱对手节奏，适合编入控场阵容。",
+    tip: "重点堆速度，其次特攻。PVP 优先带电磁波与闪避；PVE 可侧重十万伏特与电击。注意地面系克制，避免硬刚。"
+  }
+};
+
+function getGuideId() {
+  var params = new URLSearchParams(window.location.search);
+  return params.get("id") || "";
+}
+
+function renderSkills(skills) {
+  var list = document.getElementById("guide-skills");
+  list.innerHTML = "";
+  for (var i = 0; i < skills.length; i++) {
+    var li = document.createElement("li");
+    li.textContent = skills[i];
+    list.appendChild(li);
+  }
+}
+
+function showGuide(guide) {
+  document.title = guide.title + " · 攻略";
+  document.getElementById("guide-title").textContent = guide.title;
+  document.getElementById("guide-subtitle").textContent = guide.subtitle;
+  document.getElementById("guide-nature").textContent = guide.nature;
+  renderSkills(guide.skills);
+  document.getElementById("guide-usage").textContent = guide.usage;
+  document.getElementById("guide-tip").textContent = guide.tip;
+  document.getElementById("guide-content").classList.remove("hidden");
+  document.getElementById("guide-error").classList.add("hidden");
+}
+
+function showError() {
+  document.title = "攻略未找到";
+  document.getElementById("guide-title").textContent = "攻略未找到";
+  document.getElementById("guide-subtitle").textContent = "";
+  document.getElementById("guide-content").classList.add("hidden");
+  document.getElementById("guide-error").classList.remove("hidden");
+}
+
+var id = getGuideId();
+var guide = guides[id];
+
+if (guide) {
+  showGuide(guide);
+} else {
+  showError();
+}
+</script>
+
+</body>
+</html>
